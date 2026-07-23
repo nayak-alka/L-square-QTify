@@ -11,7 +11,7 @@
 
 .wrapper {
   display: flex;
-  /* align-items: stretch; */
+  align-items: stretch;
   height: 48px;
 }
 
@@ -23,10 +23,6 @@
   border-left: none;
   cursor: pointer;
   height: 100%;
-}
-
-.searchButton:hover {
-  cursor: pointer;
 }
 
 .listElement {
