@@ -8,7 +8,8 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <Section />
+      <Section section="top" sectionHdr="Top Albums" />
+      <Section section="new" sectionHdr="New Albums" />
     </>
   );
 }

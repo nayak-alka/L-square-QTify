@@ -6,14 +6,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-export default function Section() {
+export default function Section({ section, sectionHdr }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://qtify-backend.labs.crio.do/albums/top",
+          `https://qtify-backend.labs.crio.do/albums/${section}`,
         );
         setData(response.data);
       } catch (error) {
@@ -22,7 +22,7 @@ export default function Section() {
       }
     };
     fetchData();
-  }, []);
+  }, [section]);
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function Section() {
         m={2}
       >
         <Typography variant="h6" gutterBottom>
-          Top Albums
+          {sectionHdr}
         </Typography>
         <Button variant="contained" color="primary">
           Collapse
