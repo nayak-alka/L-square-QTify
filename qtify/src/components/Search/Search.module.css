@@ -25,6 +25,10 @@
   height: 100%;
 }
 
+.searchButton:hover {
+  cursor: pointer;
+}
+
 .listElement {
   padding: 15px;
   display: flex;
