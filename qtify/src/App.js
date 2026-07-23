@@ -1,13 +1,14 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-// import Hero from "./components/Hero/Hero";
+import Hero from "./components/Hero/Hero";
 // import Logo from "./components/Logo/Logo";
 
 function App() {
   return (
     <>
       <Navbar />
+      <Hero />
     </>
     // <div className="App">
     //   <header className="App-header">
