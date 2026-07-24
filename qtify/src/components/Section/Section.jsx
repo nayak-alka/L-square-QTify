@@ -46,7 +46,7 @@ export default function Section({ section, sectionHdr }) {
         </Button>
       </Box>
       {collapse ? (
-        <Carousel data={data} />
+        <Carousel data={data} section={section} />
       ) : (
         <Grid container spacing={2}>
           {data.map((item) => (
