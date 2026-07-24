@@ -5,9 +5,11 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Carousel from "../Carousel/Carousel";
 
 export default function Section({ section, sectionHdr }) {
   const [data, setData] = useState([]);
+  const [collapse, setCollapse] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,17 +37,25 @@ export default function Section({ section, sectionHdr }) {
         <Typography variant="h6" gutterBottom>
           {sectionHdr}
         </Typography>
-        <Button variant="contained" color="primary">
-          Collapse
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setCollapse(!collapse)}
+        >
+          {collapse ? "Show All" : "Collapse"}
         </Button>
       </Box>
-      <Grid container spacing={2}>
-        {data.map((item) => (
-          <Grid key={item.id} item>
-            <MediaCard data={item} />
-          </Grid>
-        ))}
-      </Grid>
+      {collapse ? (
+        <Carousel data={data} />
+      ) : (
+        <Grid container spacing={2}>
+          {data.map((item) => (
+            <Grid key={item.id} item>
+              <MediaCard data={item} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </>
   );
 }
