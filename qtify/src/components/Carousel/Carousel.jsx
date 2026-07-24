@@ -32,7 +32,7 @@ export default function Carousel({ data, section }) {
         // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
-        slidesPerGroup={3}
+        // slidesPerGroup={3}
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
